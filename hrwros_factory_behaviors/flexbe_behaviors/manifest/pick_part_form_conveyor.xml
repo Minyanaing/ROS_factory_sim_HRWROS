@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="Pick part form conveyor">
+
+	<executable package_path="flexbe_behaviors.pick_part_form_conveyor_sm" class="PickpartformconveyorSM" />
+	<tagstring>factory_automation, robot_arm</tagstring>
+	<author>Min Yan Naing</author>
+	<date>Fri Jul 10 2020</date>
+	<description>
+		Robot Arm 1 flexBE setup.
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>

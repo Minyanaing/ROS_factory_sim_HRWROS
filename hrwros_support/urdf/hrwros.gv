@@ -1,0 +1,116 @@
+digraph G {
+node [shape=box];
+"world" [label="world"];
+"world_interface" [label="world_interface"];
+"bin_1_base_link" [label="bin_1_base_link"];
+"bin_1_drop_point" [label="bin_1_drop_point"];
+"break_beam_world_interface" [label="break_beam_world_interface"];
+"break_beam_base_link" [label="break_beam_base_link"];
+"break_beam_optical_link" [label="break_beam_optical_link"];
+"logical_camera1_base_link" [label="logical_camera1_base_link"];
+"logical_camera2_base_link" [label="logical_camera2_base_link"];
+"robot1_pedestal_link" [label="robot1_pedestal_link"];
+"robot1_pedestal_link" [label="robot1_pedestal_link"];
+"robot1_base_link" [label="robot1_base_link"];
+"robot1_base" [label="robot1_base"];
+"robot1_shoulder_link" [label="robot1_shoulder_link"];
+"robot1_upper_arm_link" [label="robot1_upper_arm_link"];
+"robot1_forearm_link" [label="robot1_forearm_link"];
+"robot1_wrist_1_link" [label="robot1_wrist_1_link"];
+"robot1_wrist_2_link" [label="robot1_wrist_2_link"];
+"robot1_wrist_3_link" [label="robot1_wrist_3_link"];
+"robot1_ee_link" [label="robot1_ee_link"];
+"robot1_tool0" [label="robot1_tool0"];
+"vacuum_gripper1_base_link" [label="vacuum_gripper1_base_link"];
+"vacuum_gripper1_suction_cup" [label="vacuum_gripper1_suction_cup"];
+"robot2_pedestal_link" [label="robot2_pedestal_link"];
+"robot2_pedestal_link" [label="robot2_pedestal_link"];
+"robot2_base_link" [label="robot2_base_link"];
+"robot2_base" [label="robot2_base"];
+"robot2_shoulder_link" [label="robot2_shoulder_link"];
+"robot2_upper_arm_link" [label="robot2_upper_arm_link"];
+"robot2_forearm_link" [label="robot2_forearm_link"];
+"robot2_wrist_1_link" [label="robot2_wrist_1_link"];
+"robot2_wrist_2_link" [label="robot2_wrist_2_link"];
+"robot2_wrist_3_link" [label="robot2_wrist_3_link"];
+"robot2_ee_link" [label="robot2_ee_link"];
+"robot2_tool0" [label="robot2_tool0"];
+"vacuum_gripper2_base_link" [label="vacuum_gripper2_base_link"];
+"vacuum_gripper2_suction_cup" [label="vacuum_gripper2_suction_cup"];
+"workcell" [label="workcell"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"world" -> "world_interface_to_world" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"world_interface_to_world" -> "world_interface"
+"world_interface" -> "bin_1_joint" [label="xyz: -8 -2.2 0 \nrpy: 0 -0 0"]
+"bin_1_joint" -> "bin_1_base_link"
+"bin_1_base_link" -> "bin_1_joint_1" [label="xyz: 0 0 1 \nrpy: 0 -0 0"]
+"bin_1_joint_1" -> "bin_1_drop_point"
+"world_interface" -> "break_beam_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"break_beam_joint" -> "break_beam_world_interface"
+"break_beam_world_interface" -> "break_beam_world_joint" [label="xyz: 1.6 1.9 0.925 \nrpy: 0 -0 -3.14159"]
+"break_beam_world_joint" -> "break_beam_base_link"
+"break_beam_base_link" -> "break_beam_joint_1" [label="xyz: 0.025 0 0 \nrpy: 0 -0 0"]
+"break_beam_joint_1" -> "break_beam_optical_link"
+"world_interface" -> "logical_camera1_logical_camera_joint" [label="xyz: 1.2 1.8 2 \nrpy: 0 1.5708 -0"]
+"logical_camera1_logical_camera_joint" -> "logical_camera1_base_link"
+"world_interface" -> "logical_camera2_logical_camera_joint" [label="xyz: -8.3 -1.23 1.8 \nrpy: 0 1.5708 -0"]
+"logical_camera2_logical_camera_joint" -> "logical_camera2_base_link"
+"world_interface" -> "robot1_pedestal_to_world_interface" [label="xyz: 0.5 1.8 0 \nrpy: 0 -0 0"]
+"robot1_pedestal_to_world_interface" -> "robot1_pedestal_link"
+"world_interface" -> "robot1_pedestal_to_world_interface" [label="xyz: 0.5 1.8 0 \nrpy: 0 -0 0"]
+"robot1_pedestal_to_world_interface" -> "robot1_pedestal_link"
+"world_interface" -> "robot1_to_pedestal" [label="xyz: 0.5 1.8 0.95 \nrpy: 0 -0 0"]
+"robot1_to_pedestal" -> "robot1_base_link"
+"robot1_base_link" -> "robot1_base_link-base_fixed_joint" [label="xyz: 0 0 0 \nrpy: 0 0 3.14159"]
+"robot1_base_link-base_fixed_joint" -> "robot1_base"
+"robot1_base_link" -> "robot1_shoulder_pan_joint" [label="xyz: 0 0 0.1273 \nrpy: 0 -0 0"]
+"robot1_shoulder_pan_joint" -> "robot1_shoulder_link"
+"robot1_shoulder_link" -> "robot1_shoulder_lift_joint" [label="xyz: 0 0.220941 0 \nrpy: 0 1.5708 -0"]
+"robot1_shoulder_lift_joint" -> "robot1_upper_arm_link"
+"robot1_upper_arm_link" -> "robot1_elbow_joint" [label="xyz: 0 -0.1719 0.612 \nrpy: 0 -0 0"]
+"robot1_elbow_joint" -> "robot1_forearm_link"
+"robot1_forearm_link" -> "robot1_wrist_1_joint" [label="xyz: 0 0 0.5723 \nrpy: 0 1.5708 -0"]
+"robot1_wrist_1_joint" -> "robot1_wrist_1_link"
+"robot1_wrist_1_link" -> "robot1_wrist_2_joint" [label="xyz: 0 0.1149 0 \nrpy: 0 -0 0"]
+"robot1_wrist_2_joint" -> "robot1_wrist_2_link"
+"robot1_wrist_2_link" -> "robot1_wrist_3_joint" [label="xyz: 0 0 0.1157 \nrpy: 0 -0 0"]
+"robot1_wrist_3_joint" -> "robot1_wrist_3_link"
+"robot1_wrist_3_link" -> "robot1_ee_fixed_joint" [label="xyz: 0 0.0922 0 \nrpy: 0 -0 1.5708"]
+"robot1_ee_fixed_joint" -> "robot1_ee_link"
+"robot1_wrist_3_link" -> "robot1_wrist_3_link-tool0_fixed_joint" [label="xyz: 0 0.0922 0 \nrpy: -1.5708 0 0"]
+"robot1_wrist_3_link-tool0_fixed_joint" -> "robot1_tool0"
+"robot1_tool0" -> "gripper1_to_robot1" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"gripper1_to_robot1" -> "vacuum_gripper1_base_link"
+"vacuum_gripper1_base_link" -> "vacuum_gripper1_joint" [label="xyz: 0 0 0.01 \nrpy: 0 -0 0"]
+"vacuum_gripper1_joint" -> "vacuum_gripper1_suction_cup"
+"world_interface" -> "robot2_pedestal_to_world_interface" [label="xyz: -7.8 -1.5 0 \nrpy: 0 -0 0"]
+"robot2_pedestal_to_world_interface" -> "robot2_pedestal_link"
+"world_interface" -> "robot2_pedestal_to_world_interface" [label="xyz: -7.8 -1.5 0 \nrpy: 0 -0 0"]
+"robot2_pedestal_to_world_interface" -> "robot2_pedestal_link"
+"world_interface" -> "robot2_to_pedestal" [label="xyz: -7.8 -1.5 0.7 \nrpy: 0 -0 1.57"]
+"robot2_to_pedestal" -> "robot2_base_link"
+"robot2_base_link" -> "robot2_base_link-base_fixed_joint" [label="xyz: 0 0 0 \nrpy: 0 0 3.14159"]
+"robot2_base_link-base_fixed_joint" -> "robot2_base"
+"robot2_base_link" -> "robot2_shoulder_pan_joint" [label="xyz: 0 0 0.089159 \nrpy: 0 -0 0"]
+"robot2_shoulder_pan_joint" -> "robot2_shoulder_link"
+"robot2_shoulder_link" -> "robot2_shoulder_lift_joint" [label="xyz: 0 0.13585 0 \nrpy: 0 1.5708 -0"]
+"robot2_shoulder_lift_joint" -> "robot2_upper_arm_link"
+"robot2_upper_arm_link" -> "robot2_elbow_joint" [label="xyz: 0 -0.1197 0.425 \nrpy: 0 -0 0"]
+"robot2_elbow_joint" -> "robot2_forearm_link"
+"robot2_forearm_link" -> "robot2_wrist_1_joint" [label="xyz: 0 0 0.39225 \nrpy: 0 1.5708 -0"]
+"robot2_wrist_1_joint" -> "robot2_wrist_1_link"
+"robot2_wrist_1_link" -> "robot2_wrist_2_joint" [label="xyz: 0 0.093 0 \nrpy: 0 -0 0"]
+"robot2_wrist_2_joint" -> "robot2_wrist_2_link"
+"robot2_wrist_2_link" -> "robot2_wrist_3_joint" [label="xyz: 0 0 0.09465 \nrpy: 0 -0 0"]
+"robot2_wrist_3_joint" -> "robot2_wrist_3_link"
+"robot2_wrist_3_link" -> "robot2_ee_fixed_joint" [label="xyz: 0 0.0823 0 \nrpy: 0 -0 1.5708"]
+"robot2_ee_fixed_joint" -> "robot2_ee_link"
+"robot2_wrist_3_link" -> "robot2_wrist_3_link-tool0_fixed_joint" [label="xyz: 0 0.0823 0 \nrpy: -1.5708 0 0"]
+"robot2_wrist_3_link-tool0_fixed_joint" -> "robot2_tool0"
+"robot2_tool0" -> "gripper2_to_robot2" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"gripper2_to_robot2" -> "vacuum_gripper2_base_link"
+"vacuum_gripper2_base_link" -> "vacuum_gripper2_joint" [label="xyz: 0 0 0.01 \nrpy: 0 -0 0"]
+"vacuum_gripper2_joint" -> "vacuum_gripper2_suction_cup"
+"world_interface" -> "workcell_to_world_interface" [label="xyz: 0 0 0 \nrpy: 0 -0 1.5708"]
+"workcell_to_world_interface" -> "workcell"
+}

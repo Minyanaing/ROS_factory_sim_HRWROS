@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="Final Project_MYN">
+
+	<executable package_path="flexbe_behaviors.final_project_myn_sm" class="FinalProject_MYNSM" />
+	<tagstring>automation, robot_arm, mobile_robot, pick_and_place</tagstring>
+	<author>Min Yan Naing</author>
+	<date>19/07/2020</date>
+	<description>
+		Complete final project for the MOOC Hello (Real) World with ROS.
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>
