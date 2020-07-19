@@ -21,6 +21,7 @@ $ bash $HOME/<path_downloaded_installation_script>/install-hrwros-starter.sh
 
 Then, we can open the application from the menu bar, named **HRWROS**
 
+### Outline of Testing
 Source ROS and create a **new workspace**
 ```
 $ source /opt/ros/<distro>/setup.bash
