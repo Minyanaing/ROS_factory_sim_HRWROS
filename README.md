@@ -38,6 +38,6 @@ $ catkin b
 Once you open the **CCS**, source the workspace.
 ```
 $ source /opt/ros/<distro>/setup.bash
-S source cd $HOME/hrwros_ws/devel/setup.bash
+$ source cd $HOME/hrwros_ws/devel/setup.bash
 ```
 
