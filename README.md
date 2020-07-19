@@ -25,9 +25,19 @@ Source ROS and create a **new workspace**
 ```
 $ source /opt/ros/<distro>/setup.bash
 $ rosdep update
-$ mkdir -p $HOME/hrwros_ws/src/hrwros
+$ mkdir -p $HOME/hrwros_ws/src/
+$ cd $HOME/hrwros_ws/src
+```
+Clone the repository to the `src` folder
+```
 $ cd $HOME/hrwros_ws
 $ catkin b
 ```
 **Note** Since the tutorial is inside the CCS, `catkin_make` is not allowed.
+
+Once you open the **CCS**, source the workspace.
+```
+$ source /opt/ros/<distro>/setup.bash
+S source cd $HOME/hrwros_ws/devel/setup.bash
+```
 
